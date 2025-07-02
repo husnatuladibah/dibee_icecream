@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dibee Ice Cream</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 120px; /* ✅ agar scroll anchor tidak ketutupan header */
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      background-color: #fff0f5;
+      padding: 10px 20px;
+      box-shadow: 0 2px 8px rgba(255, 105, 180, 0.2);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .logo img {
+      height: 42px;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      background: #ff4081;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ff4081;
+      font-weight: 500;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-top: 10px;
+        gap: 10px;
+      }
+
+      nav.active {
+        display: flex;
+      }
+    }
+
+    .queenbee-section {
+      background: linear-gradient(135deg, #fff0f6, #ffe8f0);
+      margin-top: 100px;
+      padding: 80px 40px;
+    }
+
+    .queenbee-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .queenbee-img-container {
+      flex: 0 0 40%;
+      text-align: center;
+    }
+
+    .queenbee-img {
+      max-width: 100%;
+      height: auto;
+      max-height: 450px;
+    }
+
+    .queenbee-text {
+      flex: 0 0 50%;
+      font-size: 16px;
+      color: #333;
+      text-align: left;
+    }
+
+    .queenbee-text h2 {
+      font-size: 36px;
+      color: #e91e63;
+      margin-bottom: 20px;
+    }
+
+    .queenbee-text p {
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    .queenbee-text strong {
+      color: #c2185b;
+    }
+
+    @media (max-width: 768px) {
+      .queenbee-wrapper {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .queenbee-text {
+        text-align: center;
+      }
+
+      .queenbee-img {
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="img/logo-dibee.png" alt="Logo Dibee" />
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav id="nav-menu">
+      <a href="#tentang-kami" class="nav-link active">Tentang Kami</a>
+      <a href="#queenbee" class="nav-link active">Queen Bee</a> 
+      <a href="#cara-pesan" class="nav-link active">Cara Pesan</a>
+      <a href="login.php" class="nav-link active">Login / Sign In</a>
+    </nav>
+  </header>
+
+  <main class="container" style="padding-top: 130px; text-align: center;">
+    <div class="bee-wrapper" style="height: 300px; overflow: hidden; position: relative; margin-bottom: 20px;">
+      <img src="img/dibee-maskot.png" alt="Maskot Dibee" class="bee" style="width: 400px; position: absolute; animation: flyLoop 10s linear infinite, floatUpDown 3s ease-in-out infinite;" />
+    </div>
+    <h1 class="welcome-heading">
+      🍦 Selamat Datang di <span style="color: #e91e63;">Dibee Ice Cream!</span> 🍧
+    </h1>
+
+    <section class="queenbee-section" id="queenbee">
+      <div class="queenbee-wrapper">
+        <div class="queenbee-img-container">
+          <img src="img/queenbee.png" alt="Queen Bee" class="queenbee-img">
+        </div>
+        <div class="queenbee-text">
+          <h2>Queen Bee Telah Hadir</h2>
+          <p><strong>Nama</strong> | Queen Bee</p>
+          <p><strong>Tanggal Lahir</strong> | 21 april 2025</p>
+          <p><strong>Posisi</strong> | Chief Flavor Explorer & Maskot Resmi Dibee</p>
+          <p><strong>Slogan Favorit</strong> | "Semangat Manis yang Nggak Pernah Habis!"</p>
+          <p><strong>Hobi</strong> | Terbang keliling dunia mencari rasa baru dan menyebarkan kebahagiaan lewat es krim 🍦</p>
+          <p><strong>Perkenalan Diri</strong> | Saya adalah Queen Bee, sang ratu lebah yang membawa rasa manis dan senyum. Es krim adalah kerajaan saya, dan kamu adalah tamu kehormatan di setiap gigitan!</p>
+        </div>
+      </div>
+    </section>
+
+        <!-- ✅ Section Cara Pemesanan (Revisi sesuai alur real) -->
+    <section class="queenbee-section" id="cara-pesan">
+      <div class="queenbee-wrapper">
+        <div class="queenbee-text" style="flex: 1; text-align: center;">
+          <h2 style="color: #e91e63;">📲 Cara Pemesanan di Dibee Ice Cream</h2>
+          <ol style="text-align: left; max-width: 700px; margin: 0 auto; font-size: 16px; color: #444;">
+            <li>🪑 Pengunjung datang, memilih tempat duduk yang tersedia.</li>
+            <li>🔍 Di meja terdapat barcode — silakan <strong>scan barcode</strong> tersebut.</li>
+            <li>🌐 Barcode akan membuka <strong>website resmi Dibee Ice Cream</strong>.</li>
+            <li>🔐 Login jika sudah punya akun, atau daftar jika belum.</li>
+            <li>🍨 Setelah login, masuk ke <strong>Dashboard Customer</strong>.</li>
+            <li>📋 Pilih es krim dari menu yang tersedia, dan klik <strong>Tambah ke Keranjang</strong>.</li>
+            <li>✅ Saat siap memesan, lanjut ke halaman <strong>Checkout</strong>.</li>
+            <li>💳 Pilih metode pembayaran:
+              <ul style="list-style-type: circle; margin-left: 20px;">
+                <li><strong>Transfer Bank:</strong> Akan muncul <strong>QRIS</strong>, lakukan pembayaran dan konfirmasi ke pelayan.</li>
+                <li><strong>Cash:</strong> Tinggal tunggu pesanan diantar, lalu bayar langsung ke pelayan.</li>
+              </ul>
+            </li>
+            <li>🧾 Setelah pembayaran, pengunjung akan melihat <strong>nota digital</strong> yang bisa <strong>didownload</strong> atau hanya dilihat.</li>
+            <li>🍦 Selesai! Duduk santai dan <strong>nikmati es krim pilihanmu</strong> 💖</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+
+    <footer class="footer-mixue-style" id="tentang-kami">
+      <h2>Hubungi Kami</h2>
+      <div class="footer-info">
+        <div>
+          <h4>Jam Operasional</h4>
+          <p>Senin - Jumat: 09.00 - 17.30<br>Sabtu - Minggu: 09.00 - 15.00</p>
+        </div>
+        <div>
+          <h4>Hotline Kemitraan</h4>
+          <p><a href="tel:02112345678">0821-4079-6332</a></p>
+        </div>
+        <div>
+          <h4>Alamat</h4>
+          <p>Ds.Plososari Kec.Grati Kab.Pasuruan</p>
+        </div>
+        <div>
+          <h4>Website Resmi</h4>
+          <p><a href="https://dibee.free.nf" target="_blank">dibee.free.nf</a></p>
+        </div>
+      </div>
+      <div class="footer-qr">
+        <p>Scan QR Code untuk terhubung dengan media sosial kami</p>
+        <div class="qr-wrapper">
+          <div>
+            <img src="img/qr-tiktok.png" alt="TikTok QR" />
+            <p>TikTok</p>
+          </div>
+          <div>
+            <img src="img/qr-instagram.png" alt="Instagram QR" />
+            <p>Instagram</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('nav-menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
